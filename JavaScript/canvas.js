@@ -1,10 +1,9 @@
-var  c= document.getElementById("drawingCanvas");
-var ctx = c.getContext("2d");
-ctx.fillRect(20, 20, 150, 100);
+let c = document.getElementById("drawingCanvas");
+let ctx = c.getContext("2d");
 
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
-ctx.lineWidth = 5;  
+ctx.lineWidth = 2;
 ctx.strokeStyle = "#ff8303";
 //[lastX, lastY] = [finger.offsetX, finger.offsetY];
 
@@ -33,3 +32,11 @@ c.addEventListener("mousedown", (finger) => {
 });
 c.addEventListener("mouseup", () => (isDrawing = false));
 c.addEventListener("mouseout", () => (isDrawing = false));
+
+document.getElementById("clear").addEventListener(
+  "click",
+  function () {
+    ctx.clearRect(0, 0, c.width, c.height);
+  },
+  false
+);
