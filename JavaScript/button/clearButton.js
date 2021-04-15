@@ -1,7 +1,7 @@
 document.getElementById("clear").addEventListener(
   "click",
   function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
   },
   false
 );
