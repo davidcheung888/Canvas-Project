@@ -1,4 +1,4 @@
-#canvasReal{
+#canvasReal,#canvasDraft{
     border: 1px black dotted;
     position: absolute;
     top: 0px;
@@ -9,8 +9,15 @@
 
 #canvasContainer {
     height: 720px;
-  }
-  #canvasDraft {
+}
+
+#canvasDraft {
     background-color: transparent;
-  }
+    z-index: 1000;
+}
   
+
+.butContainer {
+  position: absolute;
+  top:450px
+}

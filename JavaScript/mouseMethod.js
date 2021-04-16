@@ -6,8 +6,8 @@ let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 
-let colorStroke = "#42445A";
-let colorFill = "#42445A";
+let colorStroke = color;
+let colorFill = color;
 let width = 10;
 let lineCap = "round";
 
@@ -16,16 +16,18 @@ let lineCap = "round";
 function captureMouseEvent(event) {
   this.x = event.offsetX;
   this.y = event.offsetY;
+  console.log("mouseEvent: ", x, y);
 }
 
-canvasReal.addEventListener("mousedown", function (event) {
+canvasDraft.addEventListener("mousedown", function (event) {
   dragging = true;
   console.log("Mouse Down");
   captureMouseEvent(event);
+
   currentFunction.onMouseDown(x, y);
 });
 
-canvasReal.addEventListener("mousemove", function (event) {
+canvasDraft.addEventListener("mousemove", function (event) {
   captureMouseEvent(event);
 
   if (dragging != true) {
@@ -36,14 +38,14 @@ canvasReal.addEventListener("mousemove", function (event) {
   }
 });
 
-canvasReal.addEventListener("mouseup", function (event) {
+canvasDraft.addEventListener("mouseup", function (event) {
   dragging = false;
   console.log("Mouse Up");
   captureMouseEvent(event);
   currentFunction.onMouseUp(x, y);
 });
 
-canvasReal.addEventListener("mouseleave", function (event) {
+canvasDraft.addEventListener("mouseleave", function (event) {
   dragging = false;
   console.log("Mouse Leave");
   captureMouseEvent(event);
