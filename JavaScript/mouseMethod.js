@@ -28,6 +28,7 @@ canvasDraft.addEventListener("mousedown", function (event) {
 });
 
 canvasDraft.addEventListener("mousemove", function (event) {
+  console.log(event);
   captureMouseEvent(event);
 
   if (dragging != true) {
