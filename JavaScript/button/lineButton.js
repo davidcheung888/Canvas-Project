@@ -12,6 +12,9 @@ class DrawingLine extends MouseMethods {
     this.contextDraft.fillStyle = colorFill;
     this.contextReal.lineWidth = width;
     this.contextDraft.lineWidth = width;
+    this.contextReal.lineCap = lineCapReal;
+    this.contextDraft.lineCap = lineCapReal;
+    console.log("width", width);
 
     // this.context.moveTo(this.startingX, this.startingY);
     // styling

@@ -9,9 +9,16 @@ let dragging = false;
 
 let colorStroke = color;
 let colorFill = color;
-let width = 10;
-let lineCap = "round";
-let addInput
+let width = document.getElementById("penweight").value;
+document.getElementById("penweight").addEventListener("input", function () {
+  width = document.getElementById("penweight").value;
+});
+
+let lineCapReal = "round";
+
+// set undo and redo button to disabled
+undo.disabled = true;
+document.getElementById("redo").disabled = true;
 
 // Capture Mouse Event
 
@@ -23,7 +30,6 @@ function captureMouseEvent(event) {
 
 canvasDraft.addEventListener("mousedown", function (event) {
   dragging = true;
-  console.log("Mouse Down");
   captureMouseEvent(event);
       // set canvas font
   contextDraft.font = "16px Arial";
@@ -38,16 +44,20 @@ canvasDraft.addEventListener("mousemove", function (event) {
   if (dragging != true) {
     currentFunction.onMouseMove(x, y);
   } else {
-    console.log("Dragging");
     currentFunction.onMouseDrag(x, y);
   }
 });
 
 canvasDraft.addEventListener("mouseup", function (event) {
   dragging = false;
-  console.log("Mouse Up");
   captureMouseEvent(event);
   currentFunction.onMouseUp(x, y);
+  restore_array.unshift(
+    contextReal.getImageData(0, 0, canvasReal.width, canvasReal.height)
+  );
+  redo_array = [];
+  undo.disabled = false;
+  document.getElementById("redo").disabled = true;
 });
 
 canvasDraft.addEventListener("mouseleave", function (event) {
