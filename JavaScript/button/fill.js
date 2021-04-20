@@ -83,11 +83,21 @@ class FillFunction extends MouseMethods {
 
       return r == red && g == green && b == blue && oo == o;
     }
+    function hexToRgb(colorFill) {
+      let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colorFill);
+      return result
+        ? {
+            theR: parseInt(result[1], 16),
+            theG: parseInt(result[2], 16),
+            theB: parseInt(result[3], 16),
+          }
+        : null;
+    }
     // Fill color
     function colorPixelFill(pixelPos) {
-      imgData.data[pixelPos] = 66;
-      imgData.data[pixelPos + 1] = 66;
-      imgData.data[pixelPos + 2] = 66;
+      imgData.data[pixelPos] = hexToRgb(colorFill).theR;
+      imgData.data[pixelPos + 1] = hexToRgb(colorFill).theG;
+      imgData.data[pixelPos + 2] = hexToRgb(colorFill).theB;
       imgData.data[pixelPos + 3] = 255;
     }
     // Record the original color of a pixel to three variables
