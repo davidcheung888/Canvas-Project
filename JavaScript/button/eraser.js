@@ -5,7 +5,7 @@ class eraserFunction extends MouseMethods {
     this.contextDraft = contextDraft;
   }
   onMouseDrag(x, y) {
-    contextReal.clearRect(x, y, width, width);
+    contextReal.clearRect(x - width / 2, y - width / 2, width, width);
     console.log(this.contextReal);
     console.log("hole", contextReal);
   }

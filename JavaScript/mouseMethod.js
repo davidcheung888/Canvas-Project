@@ -3,7 +3,6 @@ let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvasDraft");
 let contextDraft = canvasDraft.getContext("2d");
 
-
 let currentFunction;
 let dragging = false;
 
@@ -31,7 +30,7 @@ function captureMouseEvent(event) {
 canvasDraft.addEventListener("mousedown", function (event) {
   dragging = true;
   captureMouseEvent(event);
-      // set canvas font
+  // set canvas font
   contextDraft.font = "16px Arial";
 
   currentFunction.onMouseDown(x, y);
