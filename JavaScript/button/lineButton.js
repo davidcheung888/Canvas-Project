@@ -6,10 +6,10 @@ class DrawingLine extends MouseMethods {
   }
 
   onMouseDown(x, y) {
-this.contextReal.strokeStyle = colorStroke;
-this.contextReal.fillStyle = colorFill;
-this.contextDraft.strokeStyle = colorStroke;
-this.contextDraft.fillStyle = colorFill;
+    this.contextReal.strokeStyle = colorStroke;
+    this.contextReal.fillStyle = colorFill;
+    this.contextDraft.strokeStyle = colorStroke;
+    this.contextDraft.fillStyle = colorFill;
     this.contextReal.lineWidth = width;
     this.contextDraft.lineWidth = width;
 

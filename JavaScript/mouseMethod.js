@@ -3,6 +3,7 @@ let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvasDraft");
 let contextDraft = canvasDraft.getContext("2d");
 
+
 let currentFunction;
 let dragging = false;
 
@@ -10,25 +11,28 @@ let colorStroke = color;
 let colorFill = color;
 let width = 10;
 let lineCap = "round";
+let addInput
 
 // Capture Mouse Event
 
 function captureMouseEvent(event) {
   this.x = event.offsetX;
   this.y = event.offsetY;
-  console.log("mouseEvent: ", x, y);
+  // console.log("mouseEvent: ", x, y);
 }
 
 canvasDraft.addEventListener("mousedown", function (event) {
   dragging = true;
   console.log("Mouse Down");
   captureMouseEvent(event);
+      // set canvas font
+  contextDraft.font = "16px Arial";
 
   currentFunction.onMouseDown(x, y);
 });
 
 canvasDraft.addEventListener("mousemove", function (event) {
-  console.log(event);
+  // console.log(event);
   captureMouseEvent(event);
 
   if (dragging != true) {

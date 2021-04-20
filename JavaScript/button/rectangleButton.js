@@ -17,8 +17,11 @@ class RectFunction extends MouseMethods {
       this.startingX,
       this.startingY,
       x - this.startingX,
-      y - this.startingY
+      y - this.startingY,
+      
     );
+    console.log(x - this.startingX, y - this.startingY);
+    
   }
   onMouseMove(x, y) {}
   onMouseUp(x, y) {
