@@ -6,6 +6,8 @@ class DrawingText extends MouseMethods {
   }
 
   onMouseDown(x, y) {
+    this.contextReal.fillStyle = colorFill;
+    this.contextDraft.fillStyle = colorFill;
     let hasInput = false;
 
     if (hasInput) {
