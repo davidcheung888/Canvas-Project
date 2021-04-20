@@ -5,6 +5,7 @@ class FillFunction extends MouseMethods {
     this.contextDraft = contextDraft;
   }
   onMouseDown(x, y) {
+    // 
     let red, blue, green, clickPoint, reachLeft, reachRight;
     let imgData = contextReal.getImageData(
       0,

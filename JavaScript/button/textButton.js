@@ -39,7 +39,7 @@ class DrawingText extends MouseMethods {
 
       function drawText(txt, x, y) {
         contextReal.textBaseline = "top";
-        contextReal.font = "60px Arial";
+        contextReal.font = "50px Arial";
         contextReal.fillText(txt, x, y);
       }
     }
