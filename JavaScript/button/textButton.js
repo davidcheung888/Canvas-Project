@@ -35,6 +35,12 @@ class DrawingText extends MouseMethods {
           drawText(this.value, x, y);
           document.body.removeChild(this);
           hasInput = false;
+          restore_array.unshift(
+            contextReal.getImageData(0, 0, canvasReal.width, canvasReal.height)
+          );
+          redo_array = [];
+          undo.disabled = false;
+          document.getElementById("redo").disabled = true;
         }
       }
 

@@ -28,11 +28,11 @@
   flex-direction: column;
 }
 
-.but2 {
-  position: relative;
-  display: flex;
+.inputBut {
+  position: absolute;
+  /* display: flex; */
   top: 350px;
-  right: 30px;
+  left: 60px;
   margin-bottom: 20px;
 }
 

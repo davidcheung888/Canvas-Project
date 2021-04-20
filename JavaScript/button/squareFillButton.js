@@ -53,10 +53,10 @@ squareFill.addEventListener("click", function () {
   currentFunction = new DrawingSquareFill(contextReal, contextDraft);
 });
 
-window.addEventListener("keydown", function (e) {
-  console.log("onkeydown", e);
-  if (e.keyCode === 16) {
-    console.log("square Button clicked");
-    currentFunction = new DrawingSquareFill(contextReal, contextDraft);
-  }
-});
+// window.addEventListener("keydown", function (e) {
+//   console.log("onkeydown", e);
+//   if (e.keyCode === 16) {
+//     console.log("square Button clicked");
+//     currentFunction = new DrawingSquareFill(contextReal, contextDraft);
+//   }
+// });
