@@ -5,8 +5,10 @@ class RectFunction extends MouseMethods {
     this.contextDraft = contextDraft;
   }
   onMouseDown(x, y) {
-    this.contextReal.fillStyle = colorFill;
+    this.contextReal.strokeStyle = colorFill;
+    this.contextDraft.strokeStyle = colorFill;
     this.contextDraft.fillStyle = colorFill;
+    this.contextReal.fillStyle = colorFill;
     this.startingX = x;
     this.startingY = y;
   }
@@ -17,11 +19,9 @@ class RectFunction extends MouseMethods {
       this.startingX,
       this.startingY,
       x - this.startingX,
-      y - this.startingY,
-      
+      y - this.startingY
     );
     console.log(x - this.startingX, y - this.startingY);
-    
   }
   // onMouseMove(x, y) {}
   onMouseUp(x, y) {

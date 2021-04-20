@@ -3,6 +3,10 @@ class DrawingCircle extends MouseMethods {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    // // this.contextReal.strokeStyle = colorStroke;
+    // this.contextReal.fillStyle = colorFill;
+    // // this.contextDraft.strokeStyle = colorStroke;
+    // this.contextDraft.fillStyle = colorFill;
     this.startingX = startingX;
     this.startingY = startingY;
     this.radius = radius;
@@ -11,12 +15,16 @@ class DrawingCircle extends MouseMethods {
   onMouseDown(x, y) {
     this.startingX = x;
     this.startingY = y;
+    this.contextReal.strokeStyle = colorStroke;
+    this.contextReal.fillStyle = colorFill;
+    this.contextDraft.strokeStyle = colorStroke;
+    this.contextDraft.fillStyle = colorFill;
     console.log(this.startingX, this.startingY);
   }
 
   onMouseDrag(x, y) {
     this.contextDraft.clearRect(0, 0, canvasReal.width, canvasReal.height);
-    this.contextDraft.fillStyle = "blue";
+
     this.contextDraft.beginPath();
     this.circleX = this.startingX - x;
     this.circleY = this.startingY - y;
@@ -37,8 +45,7 @@ class DrawingCircle extends MouseMethods {
   onMouseUp(x, y) {
     this.contextDraft.clearRect(0, 0, canvasReal.width, canvasReal.height);
     this.contextReal.beginPath();
-    this.contextReal.strokeStyle = "blue";
-    this.contextReal.fillStyle = "blue";
+
     this.contextReal.arc(
       this.startingX,
       this.startingY,
