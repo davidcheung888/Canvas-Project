@@ -12,13 +12,12 @@ class DrawingText extends MouseMethods {
       return;
     } else {
       function addInput(x, y) {
-
         let input = document.createElement("input");
 
         input.type = "text";
         input.style.position = "fixed";
-        input.style.left = x + "px";
-        input.style.top = y + "px";
+        input.style.left = x + 200 + "px";
+        input.style.top = y + 50 + "px";
         input.style.zIndex = 100001;
         document.body.appendChild(input);
 
@@ -39,7 +38,7 @@ class DrawingText extends MouseMethods {
 
       function drawText(txt, x, y) {
         contextReal.textBaseline = "top";
-        contextReal.font = "50px Arial";
+        contextReal.font = `${width}px Arial`;
         contextReal.fillText(txt, x, y);
       }
     }
