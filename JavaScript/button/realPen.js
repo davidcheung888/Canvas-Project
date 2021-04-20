@@ -8,7 +8,7 @@ class PenFunction extends MouseMethods {
     this.contextReal.strokeStyle = colorStroke;
     this.contextReal.fillStyle = colorFill;
     this.contextReal.lineWidth = width;
-    this.contextReal.lineCap = "round";
+    this.contextReal.lineCap = lineCapReal;
     this.contextReal.beginPath();
     this.contextReal.moveTo(x, y);
     this.draw(x, y);
