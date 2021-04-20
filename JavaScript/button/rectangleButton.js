@@ -20,7 +20,7 @@ class RectFunction extends MouseMethods {
       y - this.startingY
     );
   }
-  onMouseMove(x, y) {}
+  // onMouseMove(x, y) {}
   onMouseUp(x, y) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.fillRect(
