@@ -9,7 +9,7 @@ class DrawingCircle extends MouseMethods {
     // this.contextDraft.fillStyle = colorFill;
     this.startingX = startingX;
     this.startingY = startingY;
-    this.radius = radius;
+    // this.radius = radius;
   }
 
   onMouseDown(x, y) {

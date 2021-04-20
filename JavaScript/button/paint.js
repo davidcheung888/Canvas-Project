@@ -1,3 +1,5 @@
+
+
 class DrawingPaint extends MouseMethods {
   constructor(contextReal, contextDraft) {
     super();
@@ -5,15 +7,14 @@ class DrawingPaint extends MouseMethods {
     this.contextDraft = contextDraft;
   }
 
-alert(fuck);
-
-
-
-
-
-
+  onMouseDown(x, y) {
+    
   }
 
+  onMouseDrag(x, y) {
+    
+  }
+}
 let paint = document.getElementById("paint");
 paint.addEventListener("click", function () {
   console.log("paint button clicked");

@@ -6,15 +6,15 @@ class DrawingSquare extends MouseMethods {
   }
 
   onMouseDown(x, y) {
-    this.contextReal.fillStyle = colorFill;
-    this.contextDraft.fillStyle = colorFill;
+    this.contextReal.strokeStyle = colorFill;
+    this.contextDraft.strokeStyle = colorFill;
     this.startingX = x;
     this.startingY = y;
   }
 
   onMouseDrag(x, y) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextDraft.fillRect(
+    this.contextDraft.strokeRect(
       this.startingX,
       this.startingY,
       x - this.startingX,
@@ -26,7 +26,7 @@ class DrawingSquare extends MouseMethods {
   onMouseMove(x, y) {}
   onMouseUp(x, y) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.fillRect(
+    this.contextReal.strokeRect(
       this.startingX,
       this.startingY,
       x - this.startingX,
