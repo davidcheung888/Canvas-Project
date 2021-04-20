@@ -10,7 +10,6 @@ class DrawingSquare extends MouseMethods {
     this.contextDraft.fillStyle = colorFill;
     this.startingX = x;
     this.startingY = y;
-    
   }
 
   onMouseDrag(x, y) {
@@ -19,9 +18,9 @@ class DrawingSquare extends MouseMethods {
       this.startingX,
       this.startingY,
       x - this.startingX,
-      x - this.startingX,
+      x - this.startingX
     );
-        console.log(x - this.startingX, y -this.startingY);
+    console.log(x - this.startingX, y - this.startingY);
   }
 
   onMouseMove(x, y) {}
@@ -31,14 +30,13 @@ class DrawingSquare extends MouseMethods {
       this.startingX,
       this.startingY,
       x - this.startingX,
-      x - this.startingX,
-
+      x - this.startingX
     );
   }
 
   // onMouseUp(x, y) {
   //   // when they drag the mouse, keep on drawing
-   
+
   //   this.contextReal.beginPath();
   //   this.contextReal.moveTo(this.startingX, this.startingY);
   //   this.contextReal.lineTo();
@@ -46,11 +44,16 @@ class DrawingSquare extends MouseMethods {
   // }
 }
 
+// let square = document.getElementById("square");
+// square.addEventListener("click", function () {
+//   console.log("square Button clicked");
+//   currentFunction = new DrawingSquare(contextReal, contextDraft);
+// });
 
-
-
-let square = document.getElementById("square");
-square.addEventListener("click", function () {
-  console.log("square Button clicked");
-  currentFunction = new DrawingSquare(contextReal, contextDraft);
+window.addEventListener("keydown", function (e) {
+  console.log("onkeydown", e);
+  if (e.keyCode === 16) {
+    console.log("square Button clicked");
+    currentFunction = new DrawingSquare(contextReal, contextDraft);
+  }
 });
