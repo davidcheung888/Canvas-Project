@@ -18,34 +18,25 @@ class FillFunction extends MouseMethods {
       alert("they are the same color");
       return;
     }
-    // Flood fill algorithm
     let pixelStack = [[x, y]];
     while (pixelStack.length) {
       let newPos, coordinateX, coordinateY, pixelPos;
       newPos = pixelStack.pop();
       coordinateX = newPos[0];
       coordinateY = newPos[1];
-      //  Locate the current pixel
       pixelPos = (coordinateY * canvasReal.width + coordinateX) * 4;
-      // Go up as long as within the boundary
       while (coordinateY >= 0 && matchStartColor(pixelPos)) {
         coordinateY -= 1;
         pixelPos -= canvasReal.width * 4;
       }
-      // Go down one pixel after while loop breaks
       pixelPos += canvasReal.width * 4;
-      // index of y-axis
       coordinateY += 1;
-      // While within the canvas
       while (
         coordinateY <= canvasReal.height - 1 &&
         matchStartColor(pixelPos)
       ) {
-        // Fill the current pixel
         colorPixelFill(pixelPos);
-        // Going downwards
         coordinateY = coordinateY + 1;
-        // Check if the left is same color
         if (coordinateX > 0) {
           if (matchStartColor(pixelPos - 4)) {
             reachLeft = false;
@@ -57,7 +48,6 @@ class FillFunction extends MouseMethods {
         } else if (reachLeft) {
           reachLeft = false;
         }
-        // Check the right is same color
         if (coordinateX < canvasReal.width - 1) {
           if (matchStartColor(pixelPos + 4)) {
             reachRight = false;
@@ -69,12 +59,10 @@ class FillFunction extends MouseMethods {
             reachRight = false;
           }
         }
-        // Go down to next location
         pixelPos += canvasReal.width * 4;
       }
     }
     contextReal.putImageData(imgData, 0, 0);
-    // Check new color equal to start color
     function matchStartColor(pixelPos) {
       let r = imgData.data[pixelPos];
       let g = imgData.data[pixelPos + 1];
@@ -83,14 +71,22 @@ class FillFunction extends MouseMethods {
 
       return r == red && g == green && b == blue && oo == o;
     }
-    // Fill color
+    function hexToRgb(colorFill) {
+      let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colorFill);
+      return result
+        ? {
+            theR: parseInt(result[1], 16),
+            theG: parseInt(result[2], 16),
+            theB: parseInt(result[3], 16),
+          }
+        : null;
+    }
     function colorPixelFill(pixelPos) {
-      imgData.data[pixelPos] = 66;
-      imgData.data[pixelPos + 1] = 66;
-      imgData.data[pixelPos + 2] = 66;
+      imgData.data[pixelPos] = hexToRgb(colorFill).theR;
+      imgData.data[pixelPos + 1] = hexToRgb(colorFill).theG;
+      imgData.data[pixelPos + 2] = hexToRgb(colorFill).theB;
       imgData.data[pixelPos + 3] = 255;
     }
-    // Record the original color of a pixel to three variables
     function checkColor(x, y) {
       let result = 0;
       clickPoint = (y * canvasReal.width + x) * 4;

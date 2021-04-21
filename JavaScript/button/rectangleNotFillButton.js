@@ -9,6 +9,8 @@ class RectFunction extends MouseMethods {
     this.contextDraft.strokeStyle = colorFill;
     // this.contextDraft.fillStyle = colorFill;
     // this.contextReal.fillStyle = colorFill;
+    this.contextReal.lineWidth = width;
+    this.contextDraft.lineWidth = width;
     this.startingX = x;
     this.startingY = y;
   }
@@ -36,7 +38,7 @@ class RectFunction extends MouseMethods {
   onMouseLeave(x, y) {}
 }
 
-let rectangle = document.getElementById("rectangle");
+let rectangle = document.getElementById("recNotFill");
 rectangle.addEventListener("click", function () {
   console.log("Rectangle Button clicked");
   currentFunction = new RectFunction(contextReal, contextDraft);

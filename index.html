@@ -7,34 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./CSS/style.css">
     <title>Canvas</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
         <div class="canvasConatainer">
             <canvas id="canvasDraft" width="800px" height="400px"></canvas>
             <canvas id="canvasReal" width="800px" height="400px"></canvas>
         </div>
-        <div class="butContainer">
-            <button class="fas fa-trash but" id="clear"></button>
-            <button class="fas fa-pencil-alt but" id="pen"></button>
-            <button class="fas fa-minus but" id="line"></button>
-            <button class="fas fa-square-full but" id="rectangle"></button>
-            <button class="fas fa-circle but" id="circle"></button>
-            <button class="fab fa-adn but" id="text"></button>
-            <button class="far fa-comment but" id="bubble"></button>
-            <!-- <button id="paint">paint</button> -->
-            <button class="fas fa-paint-roller but" id="fill"></button>
-            <button class="fas fa-eraser but" id="eraser"></button>
-            <button class="fas fa-undo-alt undo but" id="undo"></button>
-            <button class="fas fa-redo-alt redo but" id="redo"></button>
-            <input class="but" type="color" id="color" name="head" value="#000000">
-            <input class="but" type="range" name="pen-size" id="penweight" min="5" max="40" value="20">
-        </div>
 
+        <div class="butContainer">
+
+            <div class="dropdown but">
+                <button class="fas fa-pen-square dropbtn"></button>
+                <div class="dropdown-content">
+                    <a class="dropdown-item fas fa-pencil-alt" id="pen" href="#"> Pen</a>
+                    <a class="dropdown-item fas fa-minus" id="line" href="#"> Line</a>
+                </div>
+            </div>
+
+            <div class="dropdown but">
+                <button class="fas fa-shapes dropbtn"></button>
+                <div class="dropdown-content">
+                    <a class="dropdown-item fas fa-square-full" id="recFill" href="#"> Rectangle</a>
+                    <a class="dropdown-item far fa-square " id="recNotFill" href="#"> Rectangle</a>
+                    <a class="dropdown-item dropdown-item fas fa-square-full " id="squareFill" href="#"> Square</a>
+                    <a class="dropdown-item far fa-square " id="square" href="#"> Square</a>
+                    <a class="dropdown-item fas fa-circle but" id="circle" href="#"> Circle</a>
+                    <a class="dropdown-item far fa-circle but" id="DrawingCircleNotFill" href="#"> Circle</a>
+                    <a class="dropdown-item far fa-comment" id="bubble" href="#"></a>
+                </div>
+            </div>
+            <!-- =========== -->
+            <div class="dropdown but">
+                <button class="fas fas fa-tools dropbtn"></button>
+                <div class="dropdown-content">
+                    <a class="dropdown-item fas fa-paint-roller" id="fill" href="#"></a>
+                    <a class="dropdown-item fas fa-eraser" id="eraser" href="#"></a>
+                    <a class="dropdown-item fas fa-trash" id="clear" href="#"></a>
+                </div>
+            </div>
+            <!-- ============= -->
+
+
+            <button class="dropbtn fab fa-adn but" id="text"></button>
+            <!-- <button class="far fa-comment but" id="bubble"></button> -->
+            <!-- <button id="paint">paint</button> -->
+
+            <!-- <button class="fas fa-eraser but" id="eraser"></button> -->
+            <button class="fas fa-undo-alt undo but1" id="undo"></button>
+            <button class="fas fa-redo-alt redo but1" id="redo"></button>
+            <!-- <button class="fas fa-trash but" id="clear"></button> -->
+            <input class="" type="color" id="color" name="head" value="#000000">
+        </div>
+        <div class="inputBut">
+            <input class="but2" type="range" name="pen-size" id="penweight" min="5" max="40" value="20">
+        </div>
     </div>
+
+    <button class="dropbtn animateBut fas fa-plus" id="animate"></button>
+    <button class="dropbtn animateBut fas fa-play" id="play"></button>
+    <button class="dropbtn animateBut far fa-stop-circle" id="stop"></button>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -46,20 +83,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-        crossorigin="anonymous"></script>
-
     <script async defer src="./JavaScript/mouseMethod.js"></script>
 
     <script async defer src="JavaScript/button/circleButton.js"></script>
     <script async defer src="JavaScript/button/colorButton.js"></script>
     <script async defer src="JavaScript/button/lineButton.js"></script>
-    <script async defer src="JavaScript/button/penWeightButton.js"></script>
-    <script async defer src="JavaScript/button/rectangleButton.js"></script>
+    <script async defer src="./JavaScript/button/rectangleNotFillButton.js"></script>
     <script async defer src="JavaScript/button/recFillButton.js"></script>
     <script async defer src="JavaScript/button/squareButton.js"></script>
     <script async defer src="JavaScript/button/squareFillButton.js"></script>
@@ -68,11 +97,15 @@
     <script async defer src="./JavaScript/button/textButton.js">
     </script>
     <script async defer src="JavaScript/button/bubble.js"></script>
-    <script async defer src="JavaScript/button/paint.js"></script>
     <!-- <script src="./JavaScript/pen.js"></script> -->
 
     <script async defer src="./JavaScript/button/undoNRedo.js"></script>
     <script async defer src="./JavaScript/button/fill.js"></script>
     <script async defer src="./JavaScript/button/eraser.js"></script>
-  </body>
+    <script async defer src="./JavaScript/button/circleNotFill.js"></script>
+    <script async defer src="./JavaScript/button/makeAnimate.js"></script>
+
+
+</body>
+
 </html>

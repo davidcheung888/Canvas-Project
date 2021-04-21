@@ -14,42 +14,42 @@ class bubbleFunction extends MouseMethods {
     console.log(this.startingX, this.startingY);
 
     this.contextReal.beginPath();
-    this.contextReal.moveTo(this.startingX + 75, this.startingY + 25);
+    this.contextReal.moveTo(this.startingX + 50, this.startingY);
     this.contextReal.quadraticCurveTo(
+      this.startingX,
+      this.startingY,
+      this.startingX,
+      this.startingY + 37.5
+    );
+    this.contextReal.quadraticCurveTo(
+      this.startingX,
+      this.startingY + 75,
       this.startingX + 25,
-      this.startingY + 25,
-      this.startingX + 25,
-      this.startingY + 62.5
+      this.startingY + 75
     );
     this.contextReal.quadraticCurveTo(
       this.startingX + 25,
-      this.startingY + 100,
-      this.startingX + 50,
+      this.startingY + 95,
+      this.startingX + 5,
       this.startingY + 100
     );
     this.contextReal.quadraticCurveTo(
+      this.startingX + 35,
+      this.startingY + 95,
+      this.startingX + 40,
+      this.startingY + 75
+    );
+    this.contextReal.quadraticCurveTo(
+      this.startingX + 100,
+      this.startingY + 75,
+      this.startingX + 100,
+      this.startingY + 37.5
+    );
+    this.contextReal.quadraticCurveTo(
+      this.startingX + 100,
+      this.startingY,
       this.startingX + 50,
-      this.startingY + 120,
-      this.startingX + 30,
-      this.startingY + 125
-    );
-    this.contextReal.quadraticCurveTo(
-      this.startingX + 60,
-      this.startingY + 120,
-      this.startingX + 65,
-      this.startingY + 100
-    );
-    this.contextReal.quadraticCurveTo(
-      this.startingX + 125,
-      this.startingY + 100,
-      this.startingX + 125,
-      this.startingY + 62.5
-    );
-    this.contextReal.quadraticCurveTo(
-      this.startingX + 125,
-      this.startingY + 25,
-      this.startingX + 75,
-      this.startingY + 25
+      this.startingY
     );
     this.contextReal.stroke();
   }
