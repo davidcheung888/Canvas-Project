@@ -5,6 +5,7 @@
 //     this.contextDraft = contextDraft;
 //   }
 // }
+
 let animateArray = [];
 let aniIndex = 0;
 let ani = document.getElementById("animate");
@@ -48,3 +49,4 @@ edit.addEventListener("click", function () {
     canvasReal.height
   );
 });
+
