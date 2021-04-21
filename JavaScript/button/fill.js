@@ -18,7 +18,6 @@ class FillFunction extends MouseMethods {
       alert("they are the same color");
       return;
     }
-
     let pixelStack = [[x, y]];
     while (pixelStack.length) {
       let newPos, coordinateX, coordinateY, pixelPos;
