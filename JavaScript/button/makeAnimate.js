@@ -1,10 +1,11 @@
-class Animation extends MouseMethods {
-  constructor(contextReal, contextDraft) {
-    super();
-    this.contextReal = contextReal;
-    this.contextDraft = contextDraft;
-  }
-}
+// class Animation extends MouseMethods {
+//   constructor(contextReal, contextDraft) {
+//     super();
+//     this.contextReal = contextReal;
+//     this.contextDraft = contextDraft;
+//   }
+// }
+
 let animateArray = [];
 let aniIndex = 0;
 let ani = document.getElementById("animate");
@@ -34,5 +35,18 @@ function animateFunction() {
 
 let stopBut = document.getElementById("stop");
 stopBut.addEventListener("click", function () {
+  console.log("clear int");
   clearInterval(setTime);
 });
+
+let edit = document.getElementById("edit");
+edit.addEventListener("click", function () {
+  console.log("edit but clicked", animateArray);
+  animateArray[aniIndex - 1] = contextReal.getImageData(
+    0,
+    0,
+    canvasReal.width,
+    canvasReal.height
+  );
+});
+
